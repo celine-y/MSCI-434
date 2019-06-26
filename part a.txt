@@ -1,0 +1,69 @@
+Optimize a model with 154 rows, 990 columns and 3916 nonzeros
+Variable types: 0 continuous, 990 integer (22 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+07]
+  Objective range  [4e+04, 2e+08]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [8e+00, 2e+03]
+Found heuristic solution: objective 4.491978e+10
+Presolve removed 108 rows and 806 columns
+Presolve time: 0.00s
+Presolved: 46 rows, 184 columns, 544 nonzeros
+Variable types: 0 continuous, 184 integer (8 binary)
+
+Root relaxation: objective 1.206098e+09, 47 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 1.2061e+09    0    5 4.4920e+10 1.2061e+09  97.3%     -    0s
+H    0     0                    1.206495e+09 1.2061e+09  0.03%     -    0s
+     0     0     cutoff    0      1.2065e+09 1.2065e+09  0.00%     -    0s
+
+Explored 1 nodes (51 simplex iterations) in 0.02 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 2: 1.2065e+09 4.49198e+10
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.206495387500e+09, best bound 1.206495387500e+09, gap 0.0000%
+Min Distance 1206495387.5
+X values --------------------------->
+3 -> 4 : 22.0
+3 -> 7 : 350.0
+3 -> 9 : 400.0
+3 -> 11 : 200.0
+3 -> 13 : 32.0
+3 -> 19 : 383.0
+3 -> 20 : 10.0
+Y values ---------------------------->
+4 -> 16 : 9.0
+4 -> 18 : 13.0
+7 -> 1 : 9.0
+7 -> 13 : 139.0
+7 -> 19 : 202.0
+9 -> 19 : 360.0
+9 -> 20 : 40.0
+11 -> 19 : 200.0
+13 -> 7 : 16.0
+13 -> 21 : 16.0
+19 -> 0 : 20.0
+19 -> 2 : 14.0
+19 -> 4 : 12.0
+19 -> 5 : 19.0
+19 -> 6 : 97.0
+19 -> 8 : 66.0
+19 -> 9 : 54.0
+19 -> 10 : 14.0
+19 -> 12 : 43.0
+19 -> 14 : 12.0
+19 -> 17 : 32.0
+20 -> 15 : 10.0
+Z values --------------------------->
+4 : 1.0
+7 : 1.0
+9 : 1.0
+11 : 1.0
+13 : 1.0
+19 : 1.0
+20 : 1.0

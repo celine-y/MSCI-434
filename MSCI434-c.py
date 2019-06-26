@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Wed May 29 12:55:27 2019
+Created on Wed Jun 26 14:03:34 2019
 
-@author: US
+@author: celine
 """
+
 from gurobipy import *
 import numpy as np
 import pandas as pd
@@ -20,10 +21,10 @@ h = wh_c['New Cost'].values
 p_h = p['Holding cost'].values
 p_cap = p['Capacity'].values
 demand = cust['Demand'].values
+b_w = wh_c['Carbon Emission (tonnes)'].values
 
 m = Model()
 n = len(t)
-M=10000000
 
 #variables
 y = m.addVars(22, 22, vtype=GRB.INTEGER)
@@ -51,11 +52,14 @@ for j in range(22):
     m.addConstr(quicksum(x[i, j] for i in range(22)) == quicksum(y[j, k] for k in range(22)))
     
 for j in range(22):
-    m.addConstr(quicksum(y[j,k] for k in range(22)) <= M*z[j, 0])
+    m.addConstr(quicksum(y[j,k] for k in range(22)) <= 10000*z[j, 0])
     
 for j in range(22):
-    m.addConstr(quicksum(x[i,j] for i in range(22)) <= M*z[j, 0])
-
+    m.addConstr(quicksum(x[i,j] for i in range(22)) <= 10000*z[j, 0])
+    
+for j in range(22):
+    m.addConstr(449+269 + b_w[j]*z[j, 0] <= 2500)
+    
 # z-values
     m.addConstr(quicksum(z[j, 0] for j in range(22)) <= 8)
     
@@ -66,6 +70,7 @@ for j in range(22):
 m.update()
 m.optimize()
 print('Min Distance', m.objVal)
+
 print('X values --------------------------->')
 for i in range(n):
     for j in range(n):
@@ -75,7 +80,7 @@ print('Y values ---------------------------->')
 for i in range(n):
     for j in range(n):
         if y[i,j].x >0 :
-            print(i, '->', j , ':', y[i,j].x)
+            print(i, '->', j , ':', y[i,j].x)       
 print('Z values --------------------------->')
             
 for i in range(n):
