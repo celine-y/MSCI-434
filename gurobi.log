@@ -1612,3 +1612,36 @@ Solution count 0
 
 Model is infeasible
 Best objective -, best bound -, gap -
+
+Gurobi 8.1.1 (linux64, Python) logging started Mon Jul 15 12:42:06 2019
+
+Academic license - for non-commercial use only
+Optimize a model with 198 rows, 990 columns and 4884 nonzeros
+Variable types: 0 continuous, 990 integer (22 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+07]
+  Objective range  [4e+04, 2e+08]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+03]
+Presolve removed 150 rows and 806 columns
+Presolve time: 0.01s
+Presolved: 48 rows, 184 columns, 560 nonzeros
+Variable types: 0 continuous, 184 integer (8 binary)
+Found heuristic solution: objective 4.870202e+09
+
+Root relaxation: objective 1.206450e+09, 48 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 1.2064e+09    0    5 4.8702e+09 1.2064e+09  75.2%     -    0s
+H    0     0                    1.206847e+09 1.2064e+09  0.03%     -    0s
+     0     0     cutoff    0      1.2068e+09 1.2068e+09  0.00%     -    0s
+
+Explored 1 nodes (52 simplex iterations) in 0.10 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 2: 1.20685e+09 4.8702e+09 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.206846947500e+09, best bound 1.206846947500e+09, gap 0.0000%

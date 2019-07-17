@@ -65,6 +65,9 @@ for j in range(22):
 
 m.update()
 m.optimize()
+
+constrs = m.getConstrs()
+
 print('Min Distance', m.objVal)
 print('X values --------------------------->')
 for i in range(n):
